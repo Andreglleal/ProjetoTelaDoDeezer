@@ -25,17 +25,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewFontScale
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.trabalhoandroid.projetoteladodeezer.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(){
+fun HomeScreen(navController:NavController){
     Scaffold(
         topBar = {
             TopAppBar(
@@ -172,5 +174,5 @@ fun HomeScreen(){
 @Preview
 @Composable
 fun HomeScreenPreview(){
-    HomeScreen()
+    HomeScreen( navController = NavController(LocalContext.current))
 }
